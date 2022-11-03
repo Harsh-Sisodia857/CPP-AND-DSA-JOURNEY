@@ -1,35 +1,40 @@
-#include<iostream>
-#include<stack>
-#include<math.h>
+#include <iostream>
+#include <stack>
+#include <math.h>
 using namespace std;
-int prefixEvaluation(string s){
+int prefixEvaluation(string s)
+{
     stack<int> st;
-    for(int i = s.length()-1; i>=0; i--){
+    for (int i = s.length() - 1; i >= 0; i--)
+    {
         // Operand ---> ASCII OF OPERAND - ASCII OF 0 = THE OPERAND ITSELF
-        if(s[i] >= '0' && s[i] <='9'){
+        if (s[i] >= '0' && s[i] <= '9')
+        {
             st.push(s[i] - '0');
         }
-        //OPERATOR
-        else{
+        // OPERATOR
+        else
+        {
             int op1 = st.top();
             st.pop();
             int op2 = st.top();
             st.pop();
-            switch(s[i]){
-                case '+':
+            switch (s[i])
+            {
+            case '+':
                 st.push(op1 + op2);
                 break;
-                case '-':
+            case '-':
                 st.push(op1 - op2);
                 break;
-                case '*':
+            case '*':
                 st.push(op1 * op2);
                 break;
-                case '/':
+            case '/':
                 st.push(op1 / op2);
                 break;
-                case '^':
-                st.push(pow(op1,op2));
+            case '^':
+                st.push(pow(op1, op2));
                 break;
             }
         }
@@ -38,7 +43,7 @@ int prefixEvaluation(string s){
 }
 int main(int argc, char const *argv[])
 {
-    cout<<prefixEvaluation("-+7*45+20");
+    cout << prefixEvaluation("-+7*45+20");
 
     return 0;
 }

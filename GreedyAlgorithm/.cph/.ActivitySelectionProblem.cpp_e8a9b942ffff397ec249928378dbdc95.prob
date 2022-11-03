@@ -1,0 +1,1 @@
+{"name":"Local: ActivitySelectionProblem","url":"c:\\C++ programming\\GreedyAlgorithm\\ActivitySelectionProblem.cpp","tests":[{"id":1662094304032,"input":"3\n10 20\n12 15\n20 30","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\C++ programming\\GreedyAlgorithm\\ActivitySelectionProblem.cpp","group":"local","local":true}

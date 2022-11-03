@@ -1,5 +1,8 @@
 #include<iostream>
 using namespace std;
+
+//    LCM(a, b) = (a x b) / GCD(a, b)
+
 int gcd(int a,int b){
     if(a == 0)
         return b;

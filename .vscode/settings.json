@@ -3,6 +3,12 @@
         "iostream": "cpp",
         "ostream": "cpp",
         "xstring": "cpp",
-        "utility": "cpp"
-    }
+        "utility": "cpp",
+        "xiosbase": "cpp",
+        "queue": "cpp",
+        "vector": "cpp",
+        "cmath": "cpp",
+        "stack": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
 }

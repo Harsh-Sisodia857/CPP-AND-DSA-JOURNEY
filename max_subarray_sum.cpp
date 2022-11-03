@@ -30,7 +30,7 @@
 // using namespace std;
 // int main(int argc, char const *argv[])
 // {
-//     int arr[]={-1,4,7,2},cumm_arr[5];
+//     int arr[]={-1,4,7,2},cumm_arr[5]; 
 //     int i,j,max_sum = INT_MIN;
 //     cumm_arr[0] = 0;
 //     for(i=1;i<5;i++)

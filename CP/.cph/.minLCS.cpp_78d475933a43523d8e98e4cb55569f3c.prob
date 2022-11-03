@@ -1,0 +1,1 @@
+{"name":"Local: minLCS","url":"c:\\C++ programming\\CP\\minLCS.cpp","tests":[{"id":1666194310654,"input":"3\n4\naaaa\naaab\n1\nc\nz\n5\nabcde\ncdefg","output":"3\n0\n1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\C++ programming\\CP\\minLCS.cpp","group":"local","local":true}

@@ -6,6 +6,9 @@ class stack{
     int n;
     public:
     stack(int num){
+        // new allocates an amount of memory needed to store the object/array that you request. In this case n numbers of int.
+        // The pointer will then store the address to this block of memory.
+        // But be careful, this allocated block of memory will not be freed until you tell it so by writing : delete [] arr;
         arr = new int[num];
         top = -1;
         n = num;

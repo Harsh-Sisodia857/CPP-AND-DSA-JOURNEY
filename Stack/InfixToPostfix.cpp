@@ -59,6 +59,7 @@ string InfixToPostfix(string s)
 }
 int main(int argc, char const *argv[])
 {
-    cout << InfixToPostfix("a+(b*c-(d/e^f)*g)*h");
+    // cout << InfixToPostfix("a+(b*c-(d/e^f)*g)*h");
+        cout << InfixToPostfix("(a-b/c)*(a/k-l)");
     return 0;
 }

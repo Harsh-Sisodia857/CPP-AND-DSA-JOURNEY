@@ -18,7 +18,8 @@ string InfixToPrefix(string s)
 {
     stack<char> st;
     string Prefix = "";
-    for (int i = s.length(); i>0; i--)
+    reverse(s.begin(),s.end());
+    for (int i = 0; i < s.length(); i++)
     {
         if ((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z'))
         {
@@ -36,10 +37,10 @@ string InfixToPrefix(string s)
                 st.pop();
             }
             // Removing opening bracket from stack
-            if (!st.empty())
-            {
+            // if (!st.empty())
+            // {
                 st.pop();
-            }
+            // }
         }
         // if operator comes from string
         else
@@ -62,6 +63,6 @@ string InfixToPrefix(string s)
 }
 int main(int argc, char const *argv[])
 {
-    cout << InfixToPrefix("(a-b/c)*(a/k-l)");
+    cout << InfixToPrefix("(a-b/c)*(a/k-l)"); //*-a/bc-/akl
     return 0;
 }

@@ -106,8 +106,8 @@ void Delete(node* &head,int pos)
         count++;
     }
     toDelete = traverse->next;
-    delete toDelete;
     traverse->next = traverse->next->next;
+    delete toDelete;
 }
 void InsertAtMid(node* &head,int pos,int value)
 {
@@ -127,11 +127,12 @@ int main(int argc, char const *argv[])
 {
     multiple_node(4);
     viewLinkedList(head);
-    // InsertAtEnd(head,9);
-    // viewLinkedList(head);
-    // InsertAtStart(head,89);
-    // viewLinkedList(head);
-    // Delete(head,1);
+    InsertAtEnd(head,9);
+    viewLinkedList(head);
+    InsertAtStart(head,89);
+    viewLinkedList(head);
+    Delete(head,1);
+    viewLinkedList(head);
     InsertAtMid(head,3,69);
     viewLinkedList(head);
     return 0;

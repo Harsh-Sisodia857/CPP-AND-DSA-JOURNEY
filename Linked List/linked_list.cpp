@@ -127,7 +127,7 @@ node *reversek(node *head, int k)
     node *prevptr = NULL;
     node *currptr = head;
     node *nextptr;
-    while (currptr != NULL && count != k)
+    while (currptr != NULL && count < k)
     {
         nextptr = currptr->next;
         currptr->next = prevptr;
@@ -135,9 +135,9 @@ node *reversek(node *head, int k)
         currptr = nextptr;
         count++;
     }
-    if (currptr != NULL)
+    if (nextptr != NULL)
     {
-        head->next = reversek(currptr, k);
+        head->next = reversek(nextptr, k);
     }
     
     return prevptr;
@@ -189,14 +189,16 @@ void evenAfterOdd(node* &head){
 }
 int main(int argc, char const *argv[])
 {
-    // multiple_node(6);
-    insertAtStart(head,2);
-    insertAtStart(head,4);
-    insertAtStart(head,5);
-    insertAtStart(head,9);
-    insertAtStart(head,14);
-    insertAtStart(head,12);
+    multiple_node(3);
+    // insertAtStart(head,2);
+    // insertAtStart(head,4);
+    // insertAtStart(head,5);
+    // insertAtStart(head,9);
+    // insertAtStart(head,14);
+    // insertAtStart(head,12);
     viewLinkedList(head);
+    reversingNode(head);
+    // node *newHead = reversek(head,3);
     // viewLinkedList(head);
     // insertAtEnd();
     // deleteNode();
@@ -204,7 +206,7 @@ int main(int argc, char const *argv[])
     // node *new_head = reversek(head,2);
     // cout<<lengthOfLinkedList(head);
     // kappend(head,3);
-    evenAfterOdd(head);
-    viewLinkedList(head);
+    // evenAfterOdd(head);
+    // viewLinkedList(newHead);
     return 0;
 }

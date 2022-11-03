@@ -12,6 +12,9 @@ public:
         data = value;
         next = NULL;
     }
+    node (){
+
+    }
 };
 node *head1 = NULL,*head2 = NULL,*p;
 void multiple_node(node* &head,int n)
@@ -56,7 +59,7 @@ node *merge(node *&head1, node *&head2)
 {
     node *p1 = head1;
     node *p2 = head2;
-    node *merge = new node(-1);
+    node *merge = new node();
     node *p3 = merge;
     while (p1 != NULL && p2 != NULL)
     {
@@ -88,7 +91,7 @@ node *merge(node *&head1, node *&head2)
 }
 int main(int argc, char const *argv[])
 {
-    multiple_node(head1,4);
+    multiple_node(head1,2);
     viewLinkedList(head1);
     multiple_node(head2,3);
     viewLinkedList(head2);

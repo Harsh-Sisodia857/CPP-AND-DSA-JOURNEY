@@ -113,7 +113,7 @@ int main(int argc, char const *argv[])
     makeCycle(head,3);
     // cout<<detectCycle(head);
     // viewLinkedList(head);
-    removeCycle(head);
+    // removeCycle(head);
     viewLinkedList(head);
     return 0;
 }

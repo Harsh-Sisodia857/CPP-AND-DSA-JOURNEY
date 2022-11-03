@@ -4,7 +4,6 @@ using namespace std;
 
 int main(){
     string s = "Hey How are You?";
-    cout<<s.length()<<endl;
     stack<string> st;
     for(int i = 0; i<s.length(); i++){
             string word = "";
