@@ -25,18 +25,19 @@ using namespace std;
 
 
 // Using unordered map
-int main(int argc, char const *argv[])
-{
-    int arr[] = {1,3,4,1,4,2,1,3};
-    unordered_map<int,int> m;
-    int size = sizeof(arr)/sizeof(arr[0]);
-    unordered_map<int,int> :: iterator it;
-    loop(i,0,size){
-        m[arr[i]]++;
-    }
-    for(it = m.begin(); it != m.end(); it++)
-    {
-        cout<<it->first<<" "<<it->second<<endl;
-    }
-    return 0;
-}
+// int main(int argc, char const *argv[])
+// {
+//     int arr[] = {1,3,4,1,4,2,1,3};
+//     unordered_map<int,int> m;
+//     int size = sizeof(arr)/sizeof(arr[0]);
+//     unordered_map<int,int> :: iterator it;
+//     loop(i,0,size){
+//         m[arr[i]]++;
+//     }
+//     for(it = m.begin(); it != m.end(); it++)
+//     {
+//         cout<<it->first<<" "<<it->second<<endl;
+//     }
+//     return 0;
+// }
+

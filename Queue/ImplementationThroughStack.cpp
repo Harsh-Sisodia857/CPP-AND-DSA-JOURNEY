@@ -19,7 +19,6 @@ class queue{
                 s2.push(s1.top());
                 s1.pop();
             }
-            
         }
         int ans = s2.top();
         s2.pop();

@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+
 class queue{
     int *arr;
     int front;
@@ -40,7 +41,7 @@ class queue{
     }
 };
 int main(int argc, char const *argv[])
-{   
+{
     queue q(4);
     q.enqueue(1);
     q.enqueue(2);

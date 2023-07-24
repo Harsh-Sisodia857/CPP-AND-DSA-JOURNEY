@@ -65,13 +65,12 @@ void insertAtStart(node* &head,int data)
 void insertAtEnd()
 {
     int data;
-    cout << "Enter the data to be inserted at End:"
+    cout << "Enter the data to be inserted at End :"
          << " ";
     cin >> data;
     node *new_n = new node(data);
     node *traverse = head;
-    while (traverse->next != NULL)
-    {
+    while (traverse->next != NULL){
         traverse = traverse->next;
     }
     traverse->next = new_n;
@@ -81,14 +80,12 @@ void deleteNode()
     int num;
     cout << "Enter the data to be deleted: ";
     cin >> num;
-    if (head == NULL)
-    {
+    if (head == NULL){
         cout << "Linked List is Empty";
         return;
     }
     node *toDelete = head, *q;
-    if (head->data == num)
-    {
+    if (head->data == num){
         delete toDelete;
         head = head->next;
         return;
@@ -142,6 +139,19 @@ node *reversek(node *head, int k)
     
     return prevptr;
 }
+
+node *reverseRecursively(node *head)
+{
+    if (head == NULL || head->next == NULL)
+    {
+        return head;
+    }
+    node *temphead = reverseRecursively(head->next);
+    head->next->next = head;
+    head->next = NULL;
+    return temphead;
+}
+
 int lengthOfLinkedList(node* &head){
     int count = 0;
     node *len = head;

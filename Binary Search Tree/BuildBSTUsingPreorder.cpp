@@ -31,6 +31,20 @@ Node* BuildBST(int preorder[],int *preorderIdx,int key,int min,int max,int n){
     return root;
 }
 
+Node* bstFromPreOrder(int preorder[],int *idx,int min,int max,int n){
+    if(*idx >= n)
+        return NULL;
+    if(preorder[*idx] < min || preorder[*idx] > max)
+        return NULL;
+    
+    int key = preorder[*idx];
+    Node *temp = new Node(key);
+    *idx = *idx + 1;
+    temp->left = bstFromPreOrder(preorder, idx, min, key, n);
+    temp->right = bstFromPreOrder(preorder, idx, key, max, n);
+    return temp;
+}
+
 void printPreorder(Node* root){
  if(root != NULL){
     cout<<root->data<<" ";
@@ -43,7 +57,8 @@ int main(int argc, char const *argv[])
     int preorder[] = {10,2,1,13,11};
     int n = 5;
     int preorderIdx = 0;
-    Node* rootNode = BuildBST(preorder,&preorderIdx,preorder[0],INT16_MIN,INT16_MAX,n);
+    Node *rootNode = bstFromPreOrder(preorder, &preorderIdx, INT16_MIN, INT16_MAX, n);
+    // Node *rootNode = BuildBST(preorder, &preorderIdx,preorder[preorderIdx], INT16_MIN, INT16_MAX, n);
     printPreorder(rootNode);
     return 0;
 }

@@ -16,13 +16,12 @@ Node* newNode(int key){
     return temp;
 }
 
-void getVerticalOrder(Node *root,int hdis,map<int,vector<int>> &m){
-    if(root==NULL){
+void getVerticalOrder(Node* root,int hdis,map<int,vector<int>> &m){
+    if(root == NULL)
         return;
-    }
     m[hdis].push_back(root->data);
-    getVerticalOrder(root->left,hdis-1,m);
-    getVerticalOrder(root->right,hdis+1,m);
+    getVerticalOrder(root->left, hdis - 1, m);
+    getVerticalOrder(root->right, hdis + 1, m);
 
 }
 int main(int argc, char const *argv[])

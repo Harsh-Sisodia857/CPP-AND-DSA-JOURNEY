@@ -1,46 +1,35 @@
 #include <iostream>
-#include <stack>
-#include <vector>
-#include <math.h>
-#define loop(i, a, b) for (int i = a; i < b; i++)
+#include <map>
 using namespace std;
 
 int main()
 {
+	// your code goes here
 	int t;
 	cin >> t;
 	while (t--)
 	{
-		long long size;
-		cin >> size;
-		string s;
-		stack<char> st;
-		cin >> s;
-		st.push(s[0]);
-		loop(index,1,size)
+		int n;
+		bool flag = true;
+		cin >> n;
+		map<int, int> dup_value;
+		for (int i = 0; i < 2*n; i++)
 		{
-			if (st.top() == s[index])
+			int data;
+			cin >> data;
+			dup_value[data]++;
+			// cout << dup_value[data] << endl;
+			if (dup_value[data] > 2)
 			{
-				st.pop();
-				st.push('0');
+				flag = false;
 			}
-			else
-				st.push(s[index]);
 		}
-		if (st.size() == 1)
-			cout << "YES" << endl;
-		else
+		if (flag == true)
 		{
-			char c = st.top();
-			st.pop();
-			while (!st.empty() && st.top() == c)
-				st.pop();
-			if (st.empty())
-				cout << "YES" << endl;
-			else
-				cout << "NO" << endl;
+			cout << "YES" << endl;
 		}
+		else
+			cout << "NO" << endl;
 	}
-	
 	return 0;
 }
