@@ -43,11 +43,11 @@ class heap{
                 return;
                 }
 
-            // remove root
+            // Step 1 : Put last element to first index
             arr[1] = arr[size];
-            // remove last element
+            // Step 2 : remove last element
             size--;
-            // check property of heap --> satisfied or not
+            // Step 3 :  check property of heap --> satisfied or not
             int idx = 1;
             while(idx < size){
                 int left = 2 * idx;
@@ -98,6 +98,7 @@ int main(){
         // creating heap using array
         int arr[] = {-1, 2, 5, 6, 23, 53};
         int n = 6;
+        // (n/2 + 1)th index to nth index are the leaf nodes which are heap in itself so no need to process it
         for (int i = n / 2; i > 0; i--)
             h.heapify(arr, n, i);
 

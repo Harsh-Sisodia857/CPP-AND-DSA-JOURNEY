@@ -1,47 +1,52 @@
 #include <bits/stdc++.h>
 using namespace std;
+
+void addEdge(map<int, vector<pair<int, int>>> &adj, int node, pair<int, int> neighbour)
+{
+    adj[node].push_back(neighbour);
+}
+
 int main()
 {
-    int n = 5, m = 6, source = 1;
-    vector<pair<int, int>> g[n + 1]; // assuming 1 based indexing of graph
-    // Constructing the graph
-    g[1].push_back({2, 2});
-    g[1].push_back({4, 1});
-    g[2].push_back({1, 2});
-    g[2].push_back({5, 5});
-    g[2].push_back({3, 4});
-    g[3].push_back({2, 4});
-    g[3].push_back({4, 3});
-    g[3].push_back({5, 1});
-    g[4].push_back({1, 1});
-    g[4].push_back({3, 3});
-    g[5].push_back({2, 5});
-    g[5].push_back({3, 1});
-    // Dijkstra's algorithm begins from here
+    int n = 5, m = 6, src = 1;
+    map<int, vector<pair<int, int>>> adj;
+
+    addEdge(adj, 1, {2, 2});
+    addEdge(adj, 1, {4, 1});
+    addEdge(adj, 2, {1, 2});
+    addEdge(adj, 2, {5, 5});
+    addEdge(adj, 2, {3, 4});
+    addEdge(adj, 3, {2, 4});
+    addEdge(adj, 3, {4, 3});
+    addEdge(adj, 3, {5, 1});
+    addEdge(adj, 4, {1, 1});
+    addEdge(adj, 4, {3, 3});
+    addEdge(adj, 5, {2, 5});
+    addEdge(adj, 5, {3, 1});
+
     priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
-    vector<int> distTo(n + 1, INT_MAX); // 1-indexed array for calculating shortest paths
-    distTo[source] = 0;
-    pq.push(make_pair(0, source)); // (dist,source)
+    vector<int> dist(n + 1, INT_MAX);
+    pq.push({0, src});
+    dist[src] = 0;
     while (!pq.empty())
     {
-        int dist = pq.top().first;
-        int prev = pq.top().second;
+        int distance = pq.top().first;
+        int node = pq.top().second;
         pq.pop();
-        vector<pair<int, int>>::iterator it;
-        for (it = g[prev].begin(); it != g[prev].end(); it++)
+        for (auto it : adj[node])
         {
-            int next = it->first;
-            int nextDist = it->second;
-            if (distTo[next] > distTo[prev] + nextDist)
+            int nextNode = it.first;
+            int nextDist = it.second;
+            if (dist[nextNode] > (distance + nextDist))
             {
-                distTo[next] = distTo[prev] + nextDist;
-                pq.push(make_pair(distTo[next], next));
+                dist[nextNode] = distance + nextDist;
+                pq.push({dist[nextNode], nextNode});
             }
         }
     }
-    cout << "The distances from source " << source << " are : \n";
+
+    cout << "The Distance From Source Node : ";
     for (int i = 1; i <= n; i++)
-        cout << distTo[i] << " ";
-    cout << "\n";
+        cout << dist[i] << " ";
     return 0;
 }

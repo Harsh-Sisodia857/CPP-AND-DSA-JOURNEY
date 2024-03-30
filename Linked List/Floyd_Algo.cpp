@@ -87,11 +87,16 @@ void removeCycle(node* &head)
     {
         node *hare = head;
         node *tortoise = head;
-        do
+        while (hare != NULL && hare->next != NULL)
         {
             tortoise = tortoise->next;
             hare = hare->next->next;
-        } while (hare != tortoise);
+
+            if (hare == tortoise)
+            {
+                break; // Loop detected
+            }
+        }
         // We can choose any pointer and make it equal to head and then move it by one step
         tortoise = head;
         while(tortoise->next != hare->next)

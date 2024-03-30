@@ -91,18 +91,18 @@ int main(int argc, char const *argv[])
     int arr[] = {5,1,3,4,2,7};
     Node *root = NULL;
     root = insertBST(root,5);
-    insertBST(root,1);
-    insertBST(root,3);
-    insertBST(root,4);
-    insertBST(root,2);
-    insertBST(root,7);
+    insertBST(root,17);
+    insertBST(root,14);
+    insertBST(root,18);
+    insertBST(root,-2);
+    insertBST(root,15);
     inorder(root);
     cout<<endl;
     // if(searchInBST(root,4) == NULL)
     //     cout<<endl<<"Key does not exist";
     // else
     //     cout<<endl<<"Key exists";
-    deleteBST(root,5);
+    deleteBST(root,18);
     inorder(root);
     return 0;
 }

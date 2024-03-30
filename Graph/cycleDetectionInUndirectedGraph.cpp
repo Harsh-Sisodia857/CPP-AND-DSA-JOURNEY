@@ -75,6 +75,7 @@ bool detectCycle(int node,vector<int> adj[],vector<int> &vis){
 
 bool isCycle(int V,vector<int> adj[]){
     vector<int> vis(V, 0);
+    // loop is used for disconnected componenet
     for (int i = 0; i < V; i++){
         if(!vis[i]){
             if(detectCycle(i,adj,vis))
